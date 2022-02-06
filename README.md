@@ -1,2 +1,2 @@
 # Localiza.Frotas
- Localiza Bootcamp Padrao de Projeto
+ API Rest para organização do Detran em padrão Singleton
