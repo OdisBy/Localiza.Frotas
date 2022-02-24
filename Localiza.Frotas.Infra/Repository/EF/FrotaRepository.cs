@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Localiza.Frotas.Infra.Repository.EF
@@ -15,7 +16,7 @@ namespace Localiza.Frotas.Infra.Repository.EF
         public void Add(Veiculo veiculo)
         {
             dbContext.Veiculos.Add(veiculo);
-            y7u666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666dbContext.SaveChanges();
+            dbContext.SaveChanges();
         }
         public void Delete(Veiculo veiculo)
         {
@@ -24,7 +25,7 @@ namespace Localiza.Frotas.Infra.Repository.EF
         }
 
         public IEnumerable<Veiculo> GetAll() => dbContext.Veiculos.ToListAsync().Result;
-        public Veiculo GetById(Guid Id) => dbContext.Veiculos.SingleOrDefaultAsync().Result;
+        public Veiculo GetById(Guid Id) => dbContext.Veiculos.FirstOrDefaultAsync().Result;
 
         public void Update(Veiculo veiculo)
         {
